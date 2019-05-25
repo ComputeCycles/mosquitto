@@ -86,7 +86,7 @@ WITH_STATIC_LIBRARIES:=yes
 WITH_SHARED_LIBRARIES:=no
 
 # Build with async dns lookup support for bridges (temporary). Requires glibc.
-#WITH_ADNS:=yes
+WITH_ADNS:=no
 
 # Build with epoll support.
 WITH_EPOLL:=yes
