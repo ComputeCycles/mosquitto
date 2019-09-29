@@ -51,7 +51,7 @@ WITH_MEMORY_TRACKING:=yes
 # Compile with database upgrading support? If disabled, mosquitto won't
 # automatically upgrade old database versions.
 # Not currently supported.
-#WITH_DB_UPGRADE:=yes
+WITH_DB_UPGRADE:=yes
 
 # Comment out to remove publishing of the $SYS topic hierarchy containing
 # information about the broker state.
@@ -65,28 +65,28 @@ WITH_SYSTEMD:=no
 WITH_SRV:=no
 
 # Build with websockets support on the broker.
-WITH_WEBSOCKETS:=no
+WITH_WEBSOCKETS:=yes
 
 # Use elliptic keys in broker
 WITH_EC:=yes
 
 # Build man page documentation by default.
-WITH_DOCS:=yes
+WITH_DOCS:=no
 
 # Build with client support for SOCK5 proxy.
 WITH_SOCKS:=yes
 
 # Strip executables and shared libraries on install.
-WITH_STRIP:=no
+WITH_STRIP:=yes
 
 # Build static libraries
-WITH_STATIC_LIBRARIES:=no
+WITH_STATIC_LIBRARIES:=yes
 
 # Build shared libraries
-WITH_SHARED_LIBRARIES:=yes
+WITH_SHARED_LIBRARIES:=no
 
 # Build with async dns lookup support for bridges (temporary). Requires glibc.
-#WITH_ADNS:=yes
+WITH_ADNS:=no
 
 # Build with epoll support.
 WITH_EPOLL:=yes
