@@ -41,10 +41,22 @@ RUN set -x && \
         WITH_ADNS=no \
         WITH_DOCS=no \
         WITH_SHARED_LIBRARIES=yes \
+	WITH_STATIC_LIBRARIES=yes \
         WITH_SRV=no \
         WITH_STRIP=yes \
-        WITH_TLS_PSK=no \
+        WITH_TLS=yes \
+        WITH_TLS_PSK=yes \
         WITH_WEBSOCKETS=yes \
+	WITH_THREADING=yes \
+	WITH_BRIDGE=yes \
+	WITH_PERSISTENCE=yes \
+	WITH_DB_UPGRADE=yes \
+	WITH_SYSTEMD=no \
+	WITH_EC=yes \
+	WITH_SOCKS=yes \
+	WITH_EPOLL=yes \
+	WITH_BUNDLED_DEPS=yes \
+	WITH_COVERAGE=no \
         prefix=/usr \
         binary && \
     addgroup -S -g 1883 mosquitto 2>/dev/null && \
