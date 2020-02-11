@@ -2,7 +2,7 @@ include config.mk
 
 DIRS=lib client src
 DOCDIRS=man
-DISTDIRS=man
+DISTDIRS=
 DISTFILES= \
 	client/ \
 	examples/ \
@@ -37,7 +37,7 @@ DISTFILES= \
 	readme-windows.txt \
 	readme.md
 
-.PHONY : all mosquitto api docs binary check clean reallyclean test install uninstall dist sign copy localdocker
+.PHONY : all mosquitto inary check clean reallyclean test install uninstall dist sign copy localdocker
 
 all : $(MAKE_ALL)
 
@@ -47,7 +47,7 @@ api :
 	rm -rf p
 
 docs :
-	set -e; for d in ${DOCDIRS}; do $(MAKE) -C $${d}; done
+	#set -e; for d in ${DOCDIRS}; do $(MAKE) -C $${d}; done
 
 binary : mosquitto
 
@@ -83,7 +83,7 @@ utest : mosquitto
 install : mosquitto
 	set -e; for d in ${DIRS}; do $(MAKE) -C $${d} install; done
 ifeq ($(WITH_DOCS),yes)
-	set -e; for d in ${DOCDIRS}; do $(MAKE) -C $${d} install; done
+	#set -e; for d in ${DOCDIRS}; do $(MAKE) -C $${d} install; done
 endif
 	$(INSTALL) -d "${DESTDIR}/etc/mosquitto"
 	$(INSTALL) -m 644 mosquitto.conf "${DESTDIR}/etc/mosquitto/mosquitto.conf.example"
