@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu
+FROM arm32v7/debian
 MAINTAINER Van Simmons <van.simmons@computecycles.com>
 
 ARG DEBIAN_FRONTEND=noninteractive
