@@ -1,8 +1,9 @@
-FROM arm64v8/ubuntu
+FROM arm32v7/debian
 MAINTAINER Van Simmons <van.simmons@computecycles.com>
 
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get -y install openssl libwebsockets8
+RUN apt-get -y install apt-utils openssl libwebsockets8 
 RUN groupadd -r mosquitto && useradd --no-log-init -r -g mosquitto mosquitto
 RUN mkdir -p /mqtt/config /mqtt/data /mqtt/log
 RUN chown -R mosquitto.mosquitto /mqtt
